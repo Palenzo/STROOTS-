@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scripts/MenuScene.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Symtext.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/IotaLogo.gd" type="Script" id=12]
+[ext_resource path="res://Logo/GlobalGameJamLogo.png" type="Texture" id=13]
+[ext_resource path="res://Logo/iota_logo.png" type="Texture" id=14]
+[ext_resource path="res://Logo/Lavazza-Logo.svg.png" type="Texture" id=15]
+[ext_resource path="res://Logo/Pepsi.png" type="Texture" id=17]
+[ext_resource path="res://Logo/Tata Yumside.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Pepsi.gd" type="Script" id=19]
+[ext_resource path="res://scenes/TataYumside.gd" type="Script" id=20]
+[ext_resource path="res://scenes/Lavazza-Logosvg.gd" type="Script" id=21]
+[ext_resource path="res://sprites/default_background.jpg" type="Texture" id=22]
+[ext_resource path="res://Logo/COLLEGE_LOGO_WHITE.png" type="Texture" id=23]
+[ext_resource path="res://scenes/sound.mp3" type="AudioStream" id=24]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="MeshTexture" id=6]
+
+[node name="MenuScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 0.639667, 0.27025 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="IIIT_sricity logo" type="Sprite" parent="Background"]
+position = Vector2( 2606.05, 2135.06 )
+scale = Vector2( 0.0869406, 0.176543 )
+texture = ExtResource( 23 )
+script = ExtResource( 12 )
+
+[node name="IotaLogo" type="Sprite" parent="Background"]
+position = Vector2( 2531.01, 680.851 )
+scale = Vector2( 1.00235, 1.65174 )
+texture = ExtResource( 14 )
+script = ExtResource( 12 )
+
+[node name="GlobalGameJamLogo" type="Sprite" parent="Background"]
+position = Vector2( 347.724, 719.736 )
+scale = Vector2( 1.51774, 3.62447 )
+texture = ExtResource( 13 )
+
+[node name="GameName" type="RichTextLabel" parent="."]
+light_mask = 1023
+margin_left = 613.0
+margin_top = -94.0
+margin_right = 1710.0
+margin_bottom = 436.0
+grow_horizontal = 0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0.0862745, 0.572549, 0.0588235, 1 )
+custom_colors/font_color_selected = Color( 0.4, 0.886275, 0.133333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+tab_size = 5
+text = "     STROOT!!"
+fit_content_height = true
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 54.0
+margin_top = 627.0
+margin_right = 195.0
+margin_bottom = 667.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 2 )
+text = "Good BY"
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 48.0
+margin_top = 392.0
+margin_right = 166.0
+margin_bottom = 427.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 2 )
+text = "Lets go"
+icon = SubResource( 6 )
+
+[node name="Pepsi" type="Sprite" parent="."]
+position = Vector2( 945, 990 )
+scale = Vector2( 0.11569, 0.102431 )
+texture = ExtResource( 17 )
+script = ExtResource( 19 )
+
+[node name="TataYumside" type="Sprite" parent="."]
+position = Vector2( 1672, 962 )
+scale = Vector2( 1.21439, 0.897112 )
+texture = ExtResource( 18 )
+script = ExtResource( 20 )
+
+[node name="Lavazza-Logosvg" type="Sprite" parent="."]
+position = Vector2( 281, 974 )
+scale = Vector2( 0.139648, 0.123274 )
+texture = ExtResource( 15 )
+script = ExtResource( 21 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+
+[connection signal="button_down" from="QuitButton" to="." method="_on_QuitButton_button_down"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
