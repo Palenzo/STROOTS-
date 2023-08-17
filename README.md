@@ -6,7 +6,7 @@ A memory game (finding pairs of cards)
 
 - The scripts are written in gdscript
 
-# Made By Team_Raizuka, Students of IIIT Sri City (2022-2026 Batch) 
+# Made By Team_Ryzuka, Students of IIIT Sri City (2022-2026 Batch) 
 Global Game Jam 2023
 Team_Raizuka members:
 1. Adarsh Singh 
