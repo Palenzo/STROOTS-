@@ -8,7 +8,7 @@ A memory game (finding pairs of cards)
 
 # Made By Team_Ryzuka, Students of IIIT Sri City (2022-2026 Batch) 
 Global Game Jam 2023
-Team_Raizuka members:
+Team_Ryzuka members:
 1. Adarsh Singh 
 2. Adity Pal
 3. Piyush Singh
